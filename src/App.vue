@@ -16,12 +16,21 @@ export default {
 </script>
 
 <style>
+body,html {
+  height: 100%;
+  margin: 0;
+  background: url(http://i.imgur.com/NStBJ.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 3vh;
 }
 </style>
