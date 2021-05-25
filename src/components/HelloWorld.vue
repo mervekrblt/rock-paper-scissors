@@ -1,8 +1,7 @@
 <template>
   <div>
     <circle-item @select-weapon="selectWeapon" :items="items"></circle-item>
-    <button @click="computerChoose">Göster</button>
-    <div>Score</div>
+
     <circle-item :items="choosen"></circle-item>
   </div>
 </template>
@@ -14,6 +13,7 @@ export default {
   name: "HelloWorld",
   data() {
     return {
+      userChosen: null,
       choosen: null,
       items: [
         {
@@ -36,17 +36,41 @@ export default {
   },
   methods: {
     computerChoose() {
-      const randomNum = Math.floor(Math.random() * this.items.length);
-      console.log(randomNum, this.items[randomNum]);
-      this.choosen = [this.items[randomNum]]
+      this.choosen = null;
+      setTimeout(
+        function () {
+          const randomNum = Math.floor(Math.random() * this.items.length);
+          this.choosen = [this.items[randomNum]];
+        }.bind(this),
+        1500
+      );
     },
     selectWeapon(i) {
-      console.log(i);
+      this.userChosen = this.items[i].text;
+      this.computerChoose()
     },
-  }
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+img {
+  width: 50px;
+  height: 50px;
+  transition: all 0.2s;
+}
+
+img:hover {
+  cursor: pointer;
+  transform: scale(1.5);
+}
+
+.bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
 </style>

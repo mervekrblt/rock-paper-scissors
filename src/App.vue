@@ -17,7 +17,6 @@ export default {
 
 <style>
 body,html {
-  height: 100%;
   margin: 0;
   background: url(http://i.imgur.com/NStBJ.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -31,6 +30,8 @@ body,html {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   font-family: 'Cabin Sketch', cursive;
-  font-size: 3vh;
+  font-size: 2vh;
+  height: 100%;
+  width: 100%;
 }
 </style>
