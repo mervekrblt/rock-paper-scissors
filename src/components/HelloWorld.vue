@@ -1,3 +1,4 @@
+
 <template>
   <div>
     <circle-item @select-weapon="selectWeapon" :items="items"></circle-item>
@@ -5,14 +6,14 @@
     <modal
       name="modal"
       transition="scale"
-      :height="260"
+      :height="300"
       :width="220"
       classes="cute-dog-profile-photo"
     >
       <div>
-        <button style="float: right" @click="tryAgain">{{ buttonText }}</button>
         <img :src="gif" alt="" />
         <h1>{{ winner }}</h1>
+        <button @click="tryAgain">{{ buttonText }}</button>
       </div>
     </modal>
 
@@ -75,6 +76,10 @@ export default {
     },
     tryAgain() {
       this.$modal.hide('modal')
+      this.choosen = null
+      this.winner = ""
+      this.gif = ""
+      document.querySelector('.selected').classList.remove("selected")
     },
 
     displayWinner() {
@@ -147,4 +152,25 @@ img {
   height: 30vh;
   border-radius: 50%;
 }
+
+.selected {
+  filter: none;
+}
+
+button {
+  display: inline-block;
+  padding: 1px 2px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: grey;
+  border: none;
+  border-radius: 15px;
+  font-family: 'Cabin Sketch', cursive;
+}
+
+button:hover {background-color: black}
+
 </style>
