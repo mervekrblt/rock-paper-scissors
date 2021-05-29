@@ -6,7 +6,7 @@
     <modal
       name="modal"
       transition="scale"
-      :height="300"
+      :height="350"
       :width="220"
       classes="cute-dog-profile-photo"
     >
